@@ -1,0 +1,37 @@
+[data-tooltip-text] {
+	position: relative;
+
+	&::before {
+		content: attr(data-tooltip-text);
+		position: absolute;
+		bottom: -25%;
+		left: 50%;
+		width: max-content;
+		padding: 0.75em 1em;
+		border-radius: var(--radius);
+		font-size: 0.8rem;
+		text-align: center;
+		transform: translate(-50%, 100%) scale(0);
+		opacity: 0;
+		background: hsl(var(--bg-200));
+		box-shadow: var(--shadow-muted);
+		pointer-events: none;
+		transition: transform var(--transition), opacity var(--transition);
+	}
+
+	&:hover::before {
+		transform: translate(-50%, 100%) scale(1);
+		opacity: 1;
+	}
+
+	&[data-tooltip-position='top'] {
+		&::before {
+			bottom: 100%;
+			transform: translate(-50%, -100%) scale(0);
+		}
+
+		&:hover::before {
+			transform: translate(-50%, -100%) scale(1);
+		}
+	}
+}

@@ -1,0 +1,19 @@
+input,
+textarea {
+	padding: 1em;
+	outline: solid 2px transparent;
+	border-radius: var(--radius);
+	background: hsl(var(--bg-300));
+	color: var(--text);
+	font-size: 0.85rem;
+
+	&:focus {
+		outline: solid 2px hsl(var(--bg-600) / 0.5);
+	}
+}
+
+textarea {
+	resize: none;
+	width: 100%;
+	min-height: 100px;
+}

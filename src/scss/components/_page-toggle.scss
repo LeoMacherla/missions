@@ -1,0 +1,33 @@
+.page-toggle {
+	--x: 0;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	isolation: isolate;
+	margin: var(--container-padding);
+	background: hsl(var(--bg-400));
+	border-radius: var(--radius);
+
+	&:before {
+		content: '';
+		position: absolute;
+		transform: translateX(var(--x));
+		width: 50%;
+		height: 100%;
+		background: hsl(var(--primary-500));
+		border-radius: var(--radius);
+		z-index: -1;
+		transition: transform var(--transition);
+		pointer-events: none;
+	}
+
+	.toggle {
+		display: inline;
+		width: 50%;
+		padding: 0.5em 1em;
+		cursor: pointer;
+	}
+}

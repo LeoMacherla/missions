@@ -1,0 +1,89 @@
+{
+	"name": "missions",
+	"productName": "Missions",
+	"description": "Created by Leo Macherla",
+	"author": "Leo Macherla",
+	"version": "0.1.0",
+	"private": true,
+	"main": "public/app/electron.js",
+	"dependencies": {
+		"@electron/remote": "^2.0.1",
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/react": "^11.2.7",
+		"@testing-library/user-event": "^12.8.3",
+		"cross-env": "^7.0.3",
+		"electron-is-dev": "^2.0.0",
+		"electron-log": "^4.4.1",
+		"fs-extra": "^10.0.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-scripts": "4.0.3",
+		"react-string-replace": "^0.4.4",
+		"uuid": "^8.3.2",
+		"web-vitals": "^1.1.2"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm:electron\" \"npm:sass\"",
+		"sass": "sass --watch --no-source-map ./src/scss/main.scss ./src/css/main.css",
+		"electron": "wait-on tcp:3000 && electron .",
+		"build:win": "npm run build && electron-builder --win",
+		"build:mac": "npm run build && electron-builder --mac"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"concurrently": "^6.3.0",
+		"electron": "^15.3.0",
+		"electron-builder": "^22.13.1",
+		"wait-on": "^6.0.0"
+	},
+	"build": {
+		"appId": "com.github.LeoMacherla.missions",
+		"publish": [
+			{
+				"provider": "github",
+				"owner": "LeoMacherla",
+				"repo": "missions"
+			}
+		],
+		"win": {
+			"target": "nsis",
+			"icon": "public/assets/icons/icon.ico"
+		},
+		"mac": {
+			"target": "dmg",
+			"icon": "public/assets/icons/icon.icns"
+		},
+		"nsis": {
+			"oneClick": true,
+			"installerIcon": "public/assets/icons/icon.ico",
+			"uninstallerIcon": "public/assets/icons/icon.ico",
+			"uninstallDisplayName": "Uninstall Missions",
+			"deleteAppDataOnUninstall": true
+		},
+		"dmg": {
+			"backgroundColor": "#ff4d76",
+			"title": "Missions"
+		}
+	}
+}

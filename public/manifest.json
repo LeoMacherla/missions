@@ -1,0 +1,35 @@
+{
+	"short_name": "Missions",
+	"name": "Missions",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "64x64 32x32 24x24 16x16",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "assets/icon_1000.png",
+			"type": "image/png",
+			"sizes": "1000x1000"
+		},
+		{
+			"src": "assets/icon_500.png",
+			"type": "image/png",
+			"sizes": "500x500"
+		},
+		{
+			"src": "assets/icon_250.png",
+			"type": "image/png",
+			"sizes": "250x250"
+		},
+		{
+			"src": "assets/icon_125.png",
+			"type": "image/png",
+			"sizes": "125x125"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
+}

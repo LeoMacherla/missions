@@ -1,0 +1,9 @@
+.missions-list {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+	padding: var(--container-padding);
+	max-height: 100%;
+	overflow: auto;
+}

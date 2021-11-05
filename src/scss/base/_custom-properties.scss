@@ -1,0 +1,41 @@
+:root {
+	--primary-900: 346 100% 45%;
+	--primary-800: 346 100% 50%;
+	--primary-700: 346 100% 55%;
+	--primary-600: 346 100% 60%;
+	--primary-500: 346 100% 65%;
+	--primary-400: 346 100% 70%;
+	--primary-300: 346 100% 75%;
+	--primary-200: 346 100% 80%;
+	--primary-100: 346 100% 85%;
+
+	--bg-900: 0 0% 5%;
+	--bg-800: 0 0% 7%;
+	--bg-700: 0 0% 9%;
+	--bg-600: 0 0% 11%;
+	--bg-500: 0 0% 13%;
+	--bg-400: 0 0% 15%;
+	--bg-300: 0 0% 17%;
+	--bg-200: 0 0% 19%;
+	--bg-100: 0 0% 21%;
+
+	--text: 0 0% 100%;
+	--text-muted: 0 0% 40%;
+
+	--priority-low: #79ff57;
+	--priority-medium: #ffa857;
+	--priority-high: #ff5757;
+
+	--error: #e82768;
+
+	--shadow-muted: hsl(0 0% 0% / 0.05) 0px 8px 24px;
+	--shadow: hsl(0 0% 0% / 0.2) 0px 7px 29px 0px;
+
+	--container-padding: 1em 1.5em;
+	--radius: 0.5em;
+	--titlebar-height: 35px;
+
+	--transition: ease 0.35s;
+	--transition-duration: 0.35s;
+	--transition-timing-function: ease;
+}

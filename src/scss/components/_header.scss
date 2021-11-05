@@ -1,0 +1,10 @@
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: var(--container-padding);
+
+	p {
+		opacity: 0.5;
+	}
+}
