@@ -60,9 +60,11 @@ app.whenReady()
 	.then(async () => {
 		if (!isDev || process.platform === 'darwin') return
 
-		await session.defaultSession.loadExtension(
-			`C:/Users/LeoMa/AppData/Local/Google/Chrome/User Data/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.19.2_0`
-		)
+		await session.defaultSession
+			.loadExtension(
+				`C:/Users/LeoMa/AppData/Local/Google/Chrome/User Data/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.19.2_0`
+			)
+			.catch((error) => console.log(`Error loading extensions: ${error}`))
 	})
 	.then(createMain)
 	.then(log.info(`Missions v${app.getVersion()} started...`))
