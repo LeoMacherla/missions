@@ -64,7 +64,7 @@
 		]
 	},
 	"build": {
-		"appId": "com.github.LeoMacherla.missions",
+		"appId": "missions",
 		"publish": [
 			{
 				"provider": "github",
