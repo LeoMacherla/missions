@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, session } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const os = require('os')
 const isDev = require('electron-is-dev')
@@ -9,12 +9,13 @@ const {
 const fs = require('fs-extra')
 const log = require('electron-log')
 require('@electron/remote/main').initialize()
-log.transports.file.resolvePath = () => path.join(dir, 'logs', 'main.log')
 
 const icon = path.join(__dirname, 'assets', 'icons', 'icon_1000.png')
 const dir = path.join(app.getPath('documents'), 'Missions')
 const missionsFile = path.join(dir, 'missions.json')
 let main = null
+
+log.transports.file.resolvePath = () => path.join(dir, 'logs', 'main.log')
 
 const createMain = () => {
 	log.info('Initialising main window')
