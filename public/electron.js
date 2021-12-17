@@ -2,6 +2,10 @@ const { app, BrowserWindow, ipcMain, session } = require('electron')
 const path = require('path')
 const os = require('os')
 const isDev = require('electron-is-dev')
+const {
+	default: installExtension,
+	REACT_DEVELOPER_TOOLS
+} = require('electron-devtools-installer')
 const fs = require('fs-extra')
 const log = require('electron-log')
 require('@electron/remote/main').initialize()
@@ -57,14 +61,16 @@ const checkDirectories = async () => {
 app.whenReady()
 	.then(() => log.transports.file.getFile().clear())
 	.then(async () => await checkDirectories().catch(log.error))
-	.then(async () => {
+	.then(() => {
 		if (!isDev || process.platform === 'darwin') return
 
-		await session.defaultSession
-			.loadExtension(
-				`C:/Users/LeoMa/AppData/Local/Google/Chrome/User Data/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.19.2_0`
+		installExtension(REACT_DEVELOPER_TOOLS)
+			.then((name) => console.log(`Installed extension ${name}`))
+			.catch((error) =>
+				console.error(
+					`There was an error installing extensions: ${error}`
+				)
 			)
-			.catch((error) => console.log(`Error loading extensions: ${error}`))
 	})
 	.then(createMain)
 	.then(log.info(`Missions v${app.getVersion()} started...`))

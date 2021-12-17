@@ -1,12 +1,11 @@
-import { useState, useContext, useRef, useEffect } from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import { useContext, useEffect, useRef, useState } from 'react'
 
-import Select from './Select'
-import MissionContext from '../MissionContext'
-import CreateContext from '../CreateContext'
-
-import { ReactComponent as CreateIcon } from '../assets/svgs/create.svg'
 import { ReactComponent as CloseIcon } from '../assets/svgs/titlebar/close.svg'
+import CreateContext from '../CreateContext'
+import { ReactComponent as CreateIcon } from '../assets/svgs/create.svg'
+import MissionContext from '../MissionContext'
+import Select from './Select'
+import { v4 as uuidv4 } from 'uuid'
 
 const CreateMission = () => {
 	const { setMissions } = useContext(MissionContext)
@@ -61,9 +60,9 @@ const CreateMission = () => {
 	}
 
 	useEffect(() => {
-		setMissionTitle(data.title)
-		setMissionDescription(data.description)
-		setMissionPriority(data.priority.name)
+		setMissionTitle(data.title || '')
+		setMissionDescription(data.description || '')
+		setMissionPriority(data.priority.name || null)
 	}, [data])
 
 	return (

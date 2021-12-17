@@ -27,6 +27,7 @@
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^11.2.7",
 		"@testing-library/user-event": "^12.8.3",
+		"electron-devtools-installer": "^3.2.0",
 		"electron-is-dev": "^2.0.0",
 		"electron-log": "^4.4.1",
 		"fs-extra": "^10.0.0",
